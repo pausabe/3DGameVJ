@@ -21,4 +21,5 @@ function Update () {
 	this.transform.rotation = Quaternion.LookRotation(Vector3(0,0,1), ship.transform.up);
 	this.transform.position = ship.transform.position;
 	this.transform.Translate(positionOffset);
+	
 }

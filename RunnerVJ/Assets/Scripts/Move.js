@@ -2,6 +2,7 @@
 
 var speed : float;
 var rotation : float;
+var tilt : float; 
 
 function Start () {
 	//rigidBody = this.GetComponent.<Rigidbody>();
@@ -35,5 +36,10 @@ function FixedUpdate () {
 		//var v = Vector3(-2*rb.angularVelocity.x,-2*rb.velocity.y, 0);
 		//rb.AddTorque(-2*rb.angularVelocity);
 		rb.angularVelocity = Vector3.zero;
+		
+		//rb.AddRelativeTorque(0, 0, GetComponent.<Rigidbody>().velocity.x * - tilt);
+		//rb.rotation = Quaternion.Euler(0, 0, GetComponent.<Rigidbody>().velocity.x * - tilt);
 	}
+	
+
 }

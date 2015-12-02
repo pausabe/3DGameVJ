@@ -1,5 +1,7 @@
 ﻿#pragma strict
 
+var Explosion : GameObject;
+
 function Start () {
 
 }
@@ -8,9 +10,10 @@ function Update () {
 
 }
 
- function OnParticleCollision (collision: GameObject ) {
- 	
-	var rb = collision.GetComponent.<Rigidbody>();
- 	rb.AddForceAtPosition(Vector3(0,0,100), transform.position);
- 	Debug.Log("aasdf");
+ function OnCollisionEnter (collision: Collision) {
+    var contact = collision.contacts[0];
+    var rot = Quaternion.FromToRotation(Vector3(0,0,1), contact.normal);
+
+	Instantiate(Explosion, transform.position, rot);
+	Destroy(gameObject);
  }

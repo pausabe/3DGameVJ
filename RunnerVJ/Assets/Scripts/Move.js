@@ -18,7 +18,7 @@ function FixedUpdate () {
 	if (Input.GetKey(KeyCode.RightArrow)) transform.Translate(Vector3(1,0,0)*Time.deltaTime*speed);
 */
 	var rb = GetComponent.<Rigidbody>();
-    rb.velocity = Vector3(0,0,forwardSpeed);
+    //rb.velocity = Vector3(0,0,forwardSpeed);
 
 	if (Input.GetKey(KeyCode.UpArrow)) GetComponent.<Rigidbody>().AddRelativeForce(0,speed,0);
 	//this.transform.position = this.transform.position+(Vector3(0,1,0)*Time.deltaTime*speed);

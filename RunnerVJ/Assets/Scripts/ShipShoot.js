@@ -35,12 +35,7 @@ function FireGun(gun : GameObject) {
     
     var rb = shot.GetComponent.<Rigidbody>();
     rb.velocity = Vector3(0,0,ShotSpeed);
-    /*
-    emmiter.transform.position = transform.position; //Vector3(-0.2f,0.35f,-0.54f);
-    var p = emmiter.GetComponent.<EllipsoidParticleEmitter>();
-    p.Emit();
-    //Debug.Log(emmiter.transform.position);
-    yield WaitForSeconds(2);
-	//line.enabled = false;
-	*/
+
+	var audio: AudioSource = GetComponent.<AudioSource>();
+	audio.Play();
 }

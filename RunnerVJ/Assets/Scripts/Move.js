@@ -70,7 +70,7 @@ function FixedUpdate () {
 
 }
 
-  function OnCollisionEnter (collision: Collision) {
+function OnCollisionEnter (collision: Collision) {
     var contact = collision.contacts[0];
 	var rb = this.GetComponent.<Rigidbody>();
 	var velocity = Vector3(rb.velocity.x, rb.velocity.y, 0);

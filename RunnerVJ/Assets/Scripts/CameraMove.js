@@ -18,7 +18,7 @@ function Update () {
     // this.transform.position = ship.transform.position + v;
 
 	//this.transform.position = ship.transform.position + positionOffset;
-	this.transform.rotation = Quaternion.LookRotation(Vector3(0,0,1), ship.transform.up);
+	//this.transform.rotation = Quaternion.LookRotation(Vector3(0,0,1), ship.transform.up);
 	this.transform.position = ship.transform.position;
 	this.transform.Translate(positionOffset);
 	

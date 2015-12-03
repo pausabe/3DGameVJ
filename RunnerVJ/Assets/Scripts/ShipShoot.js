@@ -4,25 +4,32 @@
 var ShotSpeed : float; 
 var line : GameObject;
 
-function Start () {
-//	line = this.GetComponent.<LineRenderer>();
-//	line.enabled = false;
-	//Screen.lockCursor = true;
-}
+var allGunsShoot = false;
 
-function Update () {
-	if (Input.GetKeyDown(KeyCode.Space)) {
-		FireLaser();
-	}
-}
+public var guns : GameObject[];
+
+var gunCount : int = 0;
 
 function FireLaser() {
+		if (allGunsShoot) {
+			for (var i = 0; i < guns.length; i++) {
+				FireGun(guns[i]);
+			}
+		} else {
+			FireGun(guns[gunCount]);
+			gunCount++;
+			if (gunCount == guns.Length) gunCount = 0;
+		}
+
+}
+
+function FireGun(gun : GameObject) {
 	//line.enabled = true;
 
-	var shot = Instantiate(line, transform.position, Quaternion.identity);
+	var shot = Instantiate(line, gun.transform.position, Quaternion.identity);
 
 	var lineRenderer = shot.GetComponent.<LineRenderer>();
-	var ray = new Ray(transform.position, transform.forward);
+	var ray = new Ray(gun.transform.position, gun.transform.forward);
 	//lineRenderer.SetPosition(0, ray.origin);
 	//lineRenderer.SetPosition(1, ray.GetPoint(100));
     
